@@ -5,7 +5,7 @@ var e,t,n,i,r;e="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof se
  * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- *//** Used as the `TypeError` message for "Functions" methods. */var i="Expected a function",r=0/0,o=/^\s+|\s+$/g,a=/^[-+]0x[0-9a-f]+$/i,f=/^0b[01]+$/i,u=/^0o[0-7]+$/i,l=parseInt,c="object"==typeof e&&e&&e.Object===Object&&e,d="object"==typeof self&&self&&self.Object===Object&&self,s=c||d||Function("return this")(),p=Object.prototype.toString,v=Math.max,m=Math.min,g=function(){return s.Date.now()};/**
+ *//** Used as the `TypeError` message for "Functions" methods. */var i="Expected a function",r=0/0,o=/^\s+|\s+$/g,a=/^[-+]0x[0-9a-f]+$/i,u=/^0b[01]+$/i,f=/^0o[0-7]+$/i,l=parseInt,s="object"==typeof e&&e&&e.Object===Object&&e,c="object"==typeof self&&self&&self.Object===Object&&self,d=s||c||Function("return this")(),m=Object.prototype.toString,v=Math.max,p=Math.min,g=function(){return d.Date.now()};/**
  * Checks if `value` is the
  * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
  * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
@@ -51,7 +51,7 @@ var e,t,n,i,r;e="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof se
  *
  * _.toNumber('3.2');
  * // => 3.2
- */function y(e){if("number"==typeof e)return e;if("symbol"==typeof(t=e)||t&&"object"==typeof t&&"[object Symbol]"==p.call(t))return r;if(b(e)){var t,n="function"==typeof e.valueOf?e.valueOf():e;e=b(n)?n+"":n}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(o,"");var i=f.test(e);return i||u.test(e)?l(e.slice(2),i?2:8):a.test(e)?r:+e}t.exports=/**
+ */function y(e){if("number"==typeof e)return e;if("symbol"==typeof(t=e)||t&&"object"==typeof t&&"[object Symbol]"==m.call(t))return r;if(b(e)){var t,n="function"==typeof e.valueOf?e.valueOf():e;e=b(n)?n+"":n}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(o,"");var i=u.test(e);return i||f.test(e)?l(e.slice(2),i?2:8):a.test(e)?r:+e}t.exports=/**
  * Creates a throttled function that only invokes `func` at most once per
  * every `wait` milliseconds. The throttled function comes with a `cancel`
  * method to cancel delayed `func` invocations and a `flush` method to
@@ -147,15 +147,15 @@ var e,t,n,i,r;e="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof se
  *
  * // Cancel the trailing debounced invocation.
  * jQuery(window).on('popstate', debounced.cancel);
- */function(e,t,n){var r,o,a,f,u,l,c=0,d=!1,s=!1,p=!0;if("function"!=typeof e)throw TypeError(i);function x(t){var n=r,i=o;return r=o=void 0,c=t,f=e.apply(i,n)}function h(e){var n=e-l,i=e-c;// Either this is the first call, activity has stopped and we're at the
+ */function(e,t,n){var r,o,a,u,f,l,s=0,c=!1,d=!1,m=!0;if("function"!=typeof e)throw TypeError(i);function x(t){var n=r,i=o;return r=o=void 0,s=t,u=e.apply(i,n)}function h(e){var n=e-l,i=e-s;// Either this is the first call, activity has stopped and we're at the
 // trailing edge, the system time has gone backwards and we're treating
 // it as the trailing edge, or we've hit the `maxWait` limit.
-return void 0===l||n>=t||n<0||s&&i>=a}function O(){var e,n,i,r=g();if(h(r))return j(r);// Restart the timer.
-u=setTimeout(O,(e=r-l,n=r-c,i=t-e,s?m(i,a-n):i))}function j(e){return(// Only invoke if we have `lastArgs` which means `func` has been
+return void 0===l||n>=t||n<0||d&&i>=a}function O(){var e,n,i,r=g();if(h(r))return j(r);// Restart the timer.
+f=setTimeout(O,(e=r-l,n=r-s,i=t-e,d?p(i,a-n):i))}function j(e){return(// Only invoke if we have `lastArgs` which means `func` has been
 // debounced at least once.
-(u=void 0,p&&r)?x(e):(r=o=void 0,f))}function T(){var e,n=g(),i=h(n);if(r=arguments,o=this,l=n,i){if(void 0===u)return(// Reset any `maxWait` timer.
-c=e=l,// Start the timer for the trailing edge.
-u=setTimeout(O,t),d?x(e):f);if(s)return(// Handle invocations in a tight loop.
-u=setTimeout(O,t),x(l))}return void 0===u&&(u=setTimeout(O,t)),f}return t=y(t)||0,b(n)&&(d=!!n.leading,a=(s="maxWait"in n)?v(y(n.maxWait)||0,t):a,p="trailing"in n?!!n.trailing:p),T.cancel=function(){void 0!==u&&clearTimeout(u),c=0,r=l=o=u=void 0},T.flush=function(){return void 0===u?f:j(g())},T}(e,t,{leading:r,maxWait:t,trailing:o})}}),r=i("dCfNN"),document.addEventListener("DOMContentLoaded",()=>{let e=document.querySelector(".feedback-form"),t={email:"",message:""},n=(r&&r.__esModule?r.default:r)(()=>{t.email=e.email.value,t.message=e.message.value,console.log("Form data:",t)},500);e.email.addEventListener("input",n),e.message.addEventListener("input",n),e.addEventListener("submit",e=>{e.preventDefault(),console.log("Form submitted with data:",t),localStorage.removeItem("feedback-form-state")})});//# sourceMappingURL=03-feedback.a5ea6edf.js.map
+(f=void 0,m&&r)?x(e):(r=o=void 0,u))}function T(){var e,n=g(),i=h(n);if(r=arguments,o=this,l=n,i){if(void 0===f)return(// Reset any `maxWait` timer.
+s=e=l,// Start the timer for the trailing edge.
+f=setTimeout(O,t),c?x(e):u);if(d)return(// Handle invocations in a tight loop.
+f=setTimeout(O,t),x(l))}return void 0===f&&(f=setTimeout(O,t)),u}return t=y(t)||0,b(n)&&(c=!!n.leading,a=(d="maxWait"in n)?v(y(n.maxWait)||0,t):a,m="trailing"in n?!!n.trailing:m),T.cancel=function(){void 0!==f&&clearTimeout(f),s=0,r=l=o=f=void 0},T.flush=function(){return void 0===f?u:j(g())},T}(e,t,{leading:r,maxWait:t,trailing:o})}}),r=i("dCfNN"),document.addEventListener("DOMContentLoaded",()=>{let e=document.querySelector(".feedback-form"),t={email:"",message:""},n=(r&&r.__esModule?r.default:r)(()=>{t.email=e.email.value,t.message=e.message.value,console.log("Form data:",t)},500);e.email.addEventListener("input",n),e.message.addEventListener("input",n),e.addEventListener("submit",n=>{n.preventDefault(),console.log("Form submitted with data:",t),e.email.value="",e.message.value="",t.email="",t.message="",localStorage.removeItem("feedback-form-state")})});//# sourceMappingURL=03-feedback.4e7f8442.js.map
 
-//# sourceMappingURL=03-feedback.a5ea6edf.js.map
+//# sourceMappingURL=03-feedback.4e7f8442.js.map
