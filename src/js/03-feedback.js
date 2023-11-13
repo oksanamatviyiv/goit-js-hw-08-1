@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', event => {
     event.preventDefault();
     console.log('Form submitted with data:', formData);
+
+    form.email.value = '';
+    form.message.value = '';
+    formData.email = '';
+    formData.message = '';
+
     localStorage.removeItem('feedback-form-state');
   });
 });
