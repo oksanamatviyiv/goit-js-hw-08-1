@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formData.message = messageInput.value;
     console.log("Form data:", formData);
   };
+    
   const throttledSaveAndLogData = throttle(saveAndLogData, 500);
 
   emailInput.addEventListener("input", throttledSaveAndLogData);
